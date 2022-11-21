@@ -6,6 +6,7 @@
     <input type="text" v-model="password" placeholder="password">
     <button @click.prevent="register">register</button>
   </div>
+  <notifications></notifications>
 </div>
 </template>
 
@@ -25,15 +26,22 @@ export default {
       axios.post('https://reqres.in/api/register', {
         email: this.email,
         password: this.password
-      }).then(res => {
-        if (res.status === 200) {
+      }).then(response => {
+        if (response.status === 200) {
           this.$router.push('/')
         }
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
+        console.log(response)
+      }).catch(error => {
+        if (error.response.status === 400) {
+          this.$notify({
+            message: '.فقط کاربران تعریف شده موفق به ثبت نام می شوند',
+            type: 'error', // success, warning, error
+            size: 'lg',
+            timeout: 3000
+          })
+        }
+        console.log(error)
       })
-      console.log('register')
     }
   }
 }

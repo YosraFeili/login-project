@@ -9,6 +9,7 @@
   <div class="">
     <router-link :to="{name: 'register'}">register</router-link>
   </div>
+  <notifications></notifications>
 </div>
 </template>
 
@@ -20,7 +21,8 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      token: localStorage.getItem('token')
 
     }
   },
@@ -29,13 +31,22 @@ export default {
       axios.post('https://reqres.in/api/login', {
         email: this.email,
         password: this.password
-      }).then(res => {
-        if (res.status === 200) {
-          this.$router.push('/home')
+      }).then(response => {
+        const token = response.data.token
+        localStorage.setItem('token', token)
+        this.$router.push('/home')
+        console.log(response)
+      }).catch(error => {
+        if (error.response.status === 400) {
+          this.$notify({
+            message: '.این حساب کاربری وجود ندارد، لطفا ثبت نام کنید',
+            type: 'error', // success, warning, error
+            size: 'lg',
+            timeout: 3000
+          })
         }
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
+
+        console.log(error)
       })
     }
   }
