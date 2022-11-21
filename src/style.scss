@@ -1,10 +1,7 @@
 $primary: #2a2c41;
-$dark: #72759b;
-$secondary: #fdbf50;
-$positive: #21BA45;
-$negative: #C10015;
+$secondary: #1b4965;
+$shadow: #72759b;
 $info: #31CCEC;
-$warning: #F2C037;
 $gray: #d3d3d3;
 
 body {
@@ -93,7 +90,7 @@ li a {
 }
 
 li a:hover, a.router-link-exact-active {
-  background-color: #1b4965;
+  background-color: $secondary;
   color: #ffffff;
 }
 .search-box {
@@ -108,7 +105,7 @@ li a:hover, a.router-link-exact-active {
   max-width: 30%;
   margin: 10% auto;
   border-radius: 8px;
-  box-shadow: 0px 5px 10px 0px $dark;
+  box-shadow: 0px 5px 10px 0px $shadow;
   background-color: #ffffff;
   padding: 2rem;
   @media (max-width: 414px) {
@@ -128,7 +125,7 @@ li a:hover, a.router-link-exact-active {
     }
   }
   .login-btn:hover {
-    background-color: #1b4965;
+    background-color: $secondary;
     color: #ffffff;
   }
 
@@ -162,7 +159,7 @@ li a:hover, a.router-link-exact-active {
   margin: 10px auto;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0px 5px 10px 0px $dark;
+  box-shadow: 0px 5px 10px 0px $shadow;
   transition: transform .5s;
   @media (max-width: 280px) {
     padding: 0 50px 0 10px ;

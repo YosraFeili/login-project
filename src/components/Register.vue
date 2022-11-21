@@ -36,11 +36,13 @@ export default {
       }).catch(error => {
         if (error.response.status === 400) {
           this.$notify({
-            message: '.فقط کاربران تعریف شده موفق به ثبت نام می شوند',
+            message: '.فقط کاربران تعریف شده موفق به ثبت نام می باشند',
             type: 'error', // success, warning, error
             size: 'lg',
             timeout: 3000
           })
+          this.email = ''
+          this.password = ''
         }
         console.log(error)
       })

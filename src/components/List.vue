@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="search-box">
-      <input class="" type="text" v-model="search" placeholder="search(filter)" @input="filterUsers">
+      <input type="text" v-model="search" placeholder="search(filter)" @input="filterUsers">
     </div>
     <div class="" v-for="user in filteredUsers" :key="user.id">
         <router-link :to="{name:'profile', params: { recordId: user.id }}" class="card-user">

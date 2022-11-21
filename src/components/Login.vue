@@ -27,6 +27,7 @@ export default {
     return {
       email: '',
       password: '',
+      errorMsg: '',
       token: localStorage.getItem('token')
 
     }
@@ -49,6 +50,8 @@ export default {
             size: 'lg',
             timeout: 3000
           })
+          this.email = ''
+          this.password = ''
         }
 
         console.log(error)
