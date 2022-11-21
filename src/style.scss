@@ -71,10 +71,14 @@ ul {
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
-  margin: 0;
+  margin: 50px 0 50px;
   padding: 0;
   overflow: hidden;
   border-radius: 10px;
+  @media (max-width: 414px) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 li a {
@@ -93,10 +97,10 @@ li a:hover, a.router-link-exact-active {
   color: #ffffff;
 }
 .search-box {
-  width: 41%;
-  margin: 70px 0 40px 0;
+  max-width: 87%;
+  margin: 0px auto;
   @media (max-width: 414px) {
-   width: 64%;
+   max-width: 87%;
   }
 }
 
@@ -153,16 +157,23 @@ li a:hover, a.router-link-exact-active {
   display: flex;
   justify-content: start;
   align-items: center;
-  max-width: 41%;
+  max-width: 43%;
   background-color: $gray;
   margin: 10px auto;
   padding: 15px;
   border-radius: 5px;
+  box-shadow: 0px 5px 10px 0px $dark;
+  transition: transform .5s;
   @media (max-width: 280px) {
     padding: 0 50px 0 10px ;
   }
   @media (max-width: 414px) {
     padding: 0 80px 0 10px ;
   }
+}
+.card-user:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
