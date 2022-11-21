@@ -4,7 +4,7 @@
       <input class="" type="text" v-model="search" placeholder="search(filter)" @input="filterUsers">
     </div>
     <div class="" v-for="user in filteredUsers" :key="user.id">
-        <router-link :to="{name:'user', params: { recordId: user.id }}" class="card-user">
+        <router-link :to="{name:'profile', params: { recordId: user.id }}" class="card-user">
           <img :src="user.avatar">
           <div class="">
             <h2>{{user.first_name}} {{user.last_name}}</h2>

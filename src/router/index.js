@@ -3,15 +3,22 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import HomePage from '@/views/HomePage'
 import Register from '@/components/Register'
-import User from '@/components/User'
 import List from '@/components/List'
 import Profile from '@/components/Profile'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', name: 'home', component: HomeView },
-  { path: '/register', name: 'register', component: Register },
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
   {
     path: '/home',
     name: 'home-page',
@@ -23,14 +30,9 @@ const routes = [
         component: List
       },
       {
-        path: 'profile',
+        path: '/profile/:recordId',
         name: 'profile',
         component: Profile
-      },
-      {
-        path: ':recordId',
-        name: 'user',
-        component: User
       }
     ]
   }
