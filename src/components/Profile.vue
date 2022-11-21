@@ -1,10 +1,14 @@
 <template>
-<div class="">profile page</div>
+<div class="">
+  <UserPage/>
+</div>
 </template>
 
 <script>
+import UserPage from '@/components/User'
 export default {
-  name: 'Profile-page'
+  name: 'Profile-page',
+  components: { UserPage }
 }
 </script>
 

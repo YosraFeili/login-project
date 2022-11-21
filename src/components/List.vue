@@ -4,15 +4,13 @@
       <input type="text" v-model="search" placeholder="search(filter)" @input="filterUsers">
     </div>
     <div class="" v-for="user in filteredUsers" :key="user.id">
-      <div class="bg">
-        <router-link :to="{name:'user', params: { recordId: user.id }}">
-        <div class="">ID:{{user.id}}</div>
-        <div class="">Email:{{user.email}}</div>
-        <div class="">FirstName:{{user.first_name}}</div>
-        <div class="">LastName:{{user.last_name}}</div>
-        <div class="">Avatar:{{user.avatar}}</div>
+        <router-link :to="{name:'user', params: { recordId: user.id }}" class="card-user">
+          <img :src="user.avatar">
+          <div class="">
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+            <h3>{{user.email}}</h3>
+          </div>
         </router-link>
-      </div>
     </div>
   </div>
 </template>
@@ -43,7 +41,6 @@ export default {
       this.filteredUsers = this.allUsers.filter(user => {
         return user.first_name.includes(this.search) || user.email.includes(this.search)
       })
-      console.log(this.filteredUsers)
     }
   }
 }

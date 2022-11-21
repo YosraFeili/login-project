@@ -1,10 +1,10 @@
 <template>
-<div class="">
-  <div class="">ID:{{user.id}}</div>
-  <div class="">Email:{{user.email}}</div>
-  <div class="">FirstName:{{user.first_name}}</div>
-  <div class="">LastName:{{user.last_name}}</div>
-  <div class="">Avatar:{{user.avatar}}</div>
+<div class="card-user">
+  <img :src="user.avatar">
+  <div class="">
+    <h2>{{user.first_name}} {{user.last_name}}</h2>
+    <h3>{{user.email}}</h3>
+  </div>
 </div>
 </template>
 

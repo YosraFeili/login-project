@@ -1,16 +1,24 @@
 <template>
-<div class="">
-  <div class="">
-    <TabBar/>
+  <div>
+    <ul>
+      <li>
+        <router-link :to="{name:'list'}">
+          list
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'profile'}">
+          profile
+        </router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
-</div>
 </template>
 
 <script>
-import TabBar from '@/components/TabBar'
 export default {
-  name: 'HomePage',
-  components: { TabBar }
+  name: 'HomePage'
 }
 </script>
 

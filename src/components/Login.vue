@@ -1,15 +1,20 @@
 <template>
-<div class="">
-  <div class="">Login</div>
-  <div class="login">
-    <input type="email" v-model="email" placeholder="email">
-    <input type="text" v-model="password" placeholder="password">
-    <button @click.prevent="login">login</button>
-  </div>
-  <div class="">
-    <router-link :to="{name: 'register'}">register</router-link>
-  </div>
+<div class="login">
+  <div class="card">
+    <h1>Login</h1>
+      <input type="email" v-model="email" placeholder="email">
+      <input type="text" v-model="password" placeholder="password">
+    <div class="">
+      <button class="login-btn" @click.prevent="login">login</button>
+    </div>
+    <div class="">
+      <h3>If you don't have an account, register</h3>
+      <router-link :to="{name: 'register'}">
+        <button class="register-btn">register</button>
+      </router-link>
+    </div>
   <notifications></notifications>
+</div>
 </div>
 </template>
 

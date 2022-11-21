@@ -1,10 +1,12 @@
 <template>
-<div class="">
-  <div class="">register</div>
-  <div class="login">
+<div class="login">
+  <div class="card">
+    <h1 class="">register</h1>
     <input type="text" v-model="email" placeholder="email">
     <input type="text" v-model="password" placeholder="password">
-    <button @click.prevent="register">register</button>
+    <div class="">
+      <button @click.prevent="register" class="login-btn">register</button>
+    </div>
   </div>
   <notifications></notifications>
 </div>
