@@ -4,7 +4,7 @@
       <input type="text" v-model="search" placeholder="search(filter)" @input="filterUsers">
     </div>
     <div class="" v-for="user in filteredUsers" :key="user.id">
-      <div class="">
+      <div class="bg">
         <router-link :to="{name:'user', params: { recordId: user.id }}">
         <div class="">ID:{{user.id}}</div>
         <div class="">Email:{{user.email}}</div>

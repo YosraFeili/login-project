@@ -5,6 +5,7 @@ import store from './store'
 import axios from 'axios'
 import NotifyPlugin from 'vue-easy-notify'
 import 'vue-easy-notify/dist/vue-easy-notify.css'
+import './style.scss'
 
 Vue.config.productionTip = false
 Vue.use(NotifyPlugin)
