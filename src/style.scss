@@ -75,6 +75,10 @@ li a:hover, a.router-link-exact-active {
   background-color: #1b4965;
   color: #ffffff;
 }
+.search-box {
+  width: 41%;
+  margin: 70px 0 40px 0;
+}
 
 .card {
   max-width: 30%;
@@ -115,7 +119,7 @@ li a:hover, a.router-link-exact-active {
 .card-user {
   display: flex;
   justify-content: start;
-  max-width: 30%;
+  max-width: 41%;
   background-color: $gray;
   margin: 5px auto;
   padding: 15px;

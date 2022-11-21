@@ -39,7 +39,7 @@ export default {
       }).then(response => {
         const token = response.data.token
         localStorage.setItem('token', token)
-        this.$router.push('/home')
+        this.$router.push('/home/list')
         console.log(response)
       }).catch(error => {
         if (error.response.status === 400) {
