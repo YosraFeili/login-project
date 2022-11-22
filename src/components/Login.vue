@@ -2,10 +2,8 @@
   <div class="login">
     <div class="card">
       <h1>Login</h1>
-      <input ref="email" type="email" v-model="email" placeholder="email">
-      <div class="error-msg">{{errorMsg}}</div>
+      <input ref="input" type="email" v-model="email" placeholder="email">
       <input ref="password" type="text" v-model="password" placeholder="password">
-      <div class="error-msg">{{errorMsg}}</div>
       <div class="">
         <button class="login-btn" @click.prevent="login">login</button>
       </div>
@@ -29,7 +27,6 @@ export default {
     return {
       email: '',
       password: '',
-      errorMsg: '',
       token: localStorage.getItem('token')
 
     }
@@ -77,6 +74,4 @@ export default {
 </script>
 
 <style scoped>
-.login {
-}
 </style>

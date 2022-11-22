@@ -21,7 +21,6 @@ export default {
   mounted () {
     axios.get(`https://reqres.in/api/users/${this.$route.params.recordId}`).then((response) => {
       this.user = response.data.data
-      console.log(response)
     })
   }
 }
