@@ -25,27 +25,41 @@ export default {
   },
   methods: {
     register () {
-      axios.post('https://reqres.in/api/register', {
-        email: this.email,
-        password: this.password
-      }).then(response => {
-        if (response.status === 200) {
-          this.$router.push('/')
-        }
-        console.log(response)
-      }).catch(error => {
-        if (error.response.status === 400) {
-          this.$notify({
-            message: '.فقط کاربران تعریف شده موفق به ثبت نام می باشند',
-            type: 'error', // success, warning, error
-            size: 'lg',
-            timeout: 3000
-          })
-          this.email = ''
-          this.password = ''
-        }
-        console.log(error)
-      })
+      if (this.email === '') {
+        this.$notify({
+          message: 'Please enter your e-mail address',
+          type: 'error',
+          size: 'sm',
+          timeout: 3000
+        })
+      } else if (this.password === '') {
+        this.$notify({
+          message: 'Please enter your password',
+          type: 'error',
+          size: 'sm',
+          timeout: 3000
+        })
+      } else {
+        axios.post('https://reqres.in/api/register', {
+          email: this.email,
+          password: this.password
+        }).then(response => {
+          if (response.status === 200) {
+            this.$router.push('/')
+          }
+        }).catch(error => {
+          if (error.response.status === 400) {
+            this.$notify({
+              message: '.فقط کاربران تعریف شده موفق به ثبت نام می باشند',
+              type: 'error', // success, warning, error
+              size: 'sm',
+              timeout: 3000
+            })
+            this.email = ''
+            this.password = ''
+          }
+        })
+      }
     }
   }
 }

@@ -3,6 +3,7 @@ $secondary: #1b4965;
 $shadow: #72759b;
 $info: #31CCEC;
 $gray: #d3d3d3;
+$error: #FF0000FF;
 
 body {
   background-color: $primary;
@@ -92,6 +93,13 @@ li a {
 li a:hover, a.router-link-exact-active {
   background-color: $secondary;
   color: #ffffff;
+}
+.error-msg {
+  max-width: 20%;
+  margin: auto 130px;
+  color: $error;
+  font-size: 12px;
+  text-align: left;
 }
 .search-box {
   max-width: 87%;
