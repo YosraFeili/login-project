@@ -2,8 +2,8 @@
   <div class="login">
     <div class="card">
       <h1>Login</h1>
-      <input ref="input" type="email" v-model="email" placeholder="email">
-      <input ref="password" type="text" v-model="password" placeholder="password">
+      <input type="email" v-model="email" placeholder="email">
+      <input type="text" v-model="password" placeholder="password">
       <div class="">
         <button class="login-btn" @click.prevent="login">login</button>
       </div>
